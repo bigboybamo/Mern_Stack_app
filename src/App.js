@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import CreatePlayer from "./components/create-player";
@@ -16,54 +17,21 @@ import PlayerList from "./components/player-list";
 function App() {
   return (<Router>
     <div className="App">
-      <header className="App-header">
-        <Navbar bg="dark" variant="dark">
-          <Container>
-
-            <Navbar.Brand>
-              <Link to={"/create-player"} className="nav-link">
-                React MERN Stack App
-              </Link>
-            </Navbar.Brand>
-
-            <Nav className="justify-content-end">
-              <Nav>
-                <Link to={"/create-player"} className="nav-link">
-                  Create Player
-                </Link>
-              </Nav>
-
-              {/* <Nav>
-                <Link to={"/edit-student/:id"} className="nav-link">
-                  Edit Student
-                </Link>
-              </Nav> */}
-
-              <Nav>
-                <Link to={"/player-list"} className="nav-link">
-                  Player List
-                </Link>
-              </Nav>
-            </Nav>
-
-          </Container>
-        </Navbar>
-      </header>
-
-      <Container>
-        <Row>
-          <Col md={12}>
-            <div className="wrapper">
-              <Switch>
-                <Route exact path='/' component={CreatePlayer} />
-                <Route path="/create-player" component={CreatePlayer} />
-                <Route path="/edit-player/:id" component={EditPlayer} />
-                <Route path="/player-list" component={PlayerList} />
-              </Switch>
-            </div>
-          </Col>
-        </Row>
-      </Container>
+    <Container>
+  <Row>
+    <Col className="logo"><b>PerfumeHouse</b></Col>
+    <Col className="right-content">See All Perfumes || Submit a perfume</Col>
+  </Row>
+  </Container>
+  <div className="body-div">
+  <Container>
+  <Row>
+    <Col sm={5} className="welcome-text">Share Your Guilty Pleasure. Indulge. Connect</Col>
+    <Col sm={7}> <img src="/images/perfumeee.jpg" alt="perf"></img> </Col>
+  </Row>
+  </Container>
+  </div>
+      
     </div>
   </Router>);
 }
