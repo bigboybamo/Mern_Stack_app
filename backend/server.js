@@ -1,5 +1,5 @@
 let express = require('express')
-//let cors = require('cors')
+let cors = require('cors')
 let bodyParser = require('body-parser')
 const router = require('./routes/perfume.route')
 require('./database/db')
@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }))
 
-//app.use(cors())
+app.use(cors())
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + "/index.html");
