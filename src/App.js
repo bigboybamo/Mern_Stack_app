@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+// import Nav from "react-bootstrap/Nav";
+// import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -10,27 +10,27 @@ import "./App.css";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import CreatePlayer from "./components/create-player";
-import EditPlayer from "./components/edit-player";
-import PlayerList from "./components/player-list";
+import home from "./components/home"
+// import navbar from "./components/navbar"
+import createPerfume from "./components/createPerfume";
+// import EditPlayer from "./components/editPerfume";
+import perfumeList from "./components/perfumeList";
 
 function App() {
   return (<Router>
     <div className="App">
     <Container>
   <Row>
-    <Col className="logo"><b>PerfumeHouse</b></Col>
-    <Col className="right-content">See All Perfumes || Submit a perfume</Col>
+    <Col className="logo"><b><Link to ="/" className="link">PerfumeHouse</Link></b></Col>
+    <Col className="right-content"><div className="grid-child purple"><Link to="/perfumeList" className="link">See All Perfumes</Link></div><div className="grid-child green"><Link to="/createPerfume">Submit a perfume</Link></div></Col>
   </Row>
   </Container>
-  <div className="body-div">
-  <Container>
-  <Row>
-    <Col sm={5} className="welcome-text">Share Your Guilty Pleasure. Indulge. Connect</Col>
-    <Col sm={7}> <img src="/images/perfumeee.jpg" alt="perf"></img> </Col>
-  </Row>
-  </Container>
-  </div>
+   <home/>
+      <Switch>
+      <Route exact path="/" component={home} />
+      <Route path="/perfumeList" component={perfumeList} />
+      <Route path="/createPerfume" component={createPerfume} />
+        </Switch>
       
     </div>
   </Router>);
