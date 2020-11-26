@@ -71,3 +71,10 @@ td {padding:10px 25px 10px 25px;}
   margin-left: 2%;
   margin-top: 2%;
 }
+
+.form-wrapper{
+  height: 200px;
+  width: 50%;
+  margin-left: 30%;
+  
+}

@@ -6,7 +6,7 @@ import axios from 'axios';
 
 export default class createPerfume extends Component {
     constructor(props) {
-        super(props)
+        super(props)  
     
         // Setting up functions
         this.onChangeperfumeName = this.onChangeperfumeName.bind(this);

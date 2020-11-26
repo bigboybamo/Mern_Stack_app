@@ -37,10 +37,10 @@ return(
                   <strong>{el.perfumeName}</strong>
                 </Card.Text>
                 <Card.Text>
-                  <i>@{el.brand}</i>
+                  <i>{el.brand}</i>
                 </Card.Text>
                 <Card.Text>
-                <u>{el.yourName}</u>
+                 <u>{el.yourName}</u>
                 </Card.Text>
                 {/* <Button id={el.id} /> */}
               </Card.Body>
