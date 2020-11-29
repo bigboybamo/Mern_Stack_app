@@ -21,8 +21,6 @@
   justify-content: center;
 }
 
-
-
 .welcome-text {
   box-sizing: border-box;
   color: rgb(255, 255, 255);
@@ -47,13 +45,11 @@ img {
 }
 
 .link {
-  color: #FFF;
+  color: #fff;
 }
 
-
-
 .link:hover {
-   color: #00F
+  color: #00f;
 }
 .table-div {
   width: 100%;
@@ -62,9 +58,11 @@ img {
 
 Table {
   width: 100%;
-  height: 100%
+  height: 100%;
 }
-td {padding:10px 25px 10px 25px;}
+td {
+  padding: 10px 25px 10px 25px;
+}
 
 .cardDiv {
   color: black;
@@ -75,11 +73,10 @@ td {padding:10px 25px 10px 25px;}
   margin-top: 2%;
 }
 
-.form-wrapper{
+.form-wrapper {
   height: 200px;
   width: 50%;
   margin-left: 30%;
-  
 }
 
 .panel-heading {
