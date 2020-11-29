@@ -2,6 +2,7 @@ let express = require('express')
 let cors = require('cors')
 let bodyParser = require('body-parser')
 const router = require('./routes/perfume.route')
+
 require('./database/db')
 
 const app = express()
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + "/index.html");
  });
 
+ 
 app.use('/', router)
 
 // PORT
@@ -29,3 +31,4 @@ app.use(function (err, req, res, next) {
   if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).send(err.message);
 })
+

@@ -49,6 +49,9 @@ img {
 .link {
   color: #FFF;
 }
+
+
+
 .link:hover {
    color: #00F
 }
@@ -77,4 +80,8 @@ td {padding:10px 25px 10px 25px;}
   width: 50%;
   margin-left: 30%;
   
+}
+
+.panel-heading {
+  margin-top: 10%;
 }

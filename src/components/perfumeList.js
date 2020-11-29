@@ -1,11 +1,8 @@
 import React, {Component} from "react"
-import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
-import Table from "react-bootstrap/Col"
-import axios from 'axios'
+// import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 import { Card } from "react-bootstrap";
-// import Button from "./Button";
+
 
 export default class perfumeList extends Component{
     constructor(props){
@@ -42,8 +39,10 @@ return(
                 <Card.Text>
                  <u>{el.yourName}</u>
                 </Card.Text>
-                {/* <Button id={el.id} /> */}
-              </Card.Body>
+                <Card.Text>
+              <Link to ={`/show/${el._id}`}>More Details</Link> 
+                </Card.Text>
+                </Card.Body>
             </Card>
           </div>
         ))}
