@@ -1,17 +1,24 @@
-let express = require('express')
-let cors = require('cors')
-let bodyParser = require('body-parser')
+const express = require('express')
+const cors = require('cors')
+const bodyParser = require('body-parser')
 const router = require('./routes/perfume.route')
-
 require('./database/db')
 
 const app = express()
+// const http = require('http').Server(app)
+// const io = require('socket.io')(http)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }))
 
 app.use(cors())
+
+// io.on('connection', socket => {
+//   socket.on('message', ({ name, message }) => {
+//     io.emit('message', { name, message })
+//   })
+// })
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + "/index.html");

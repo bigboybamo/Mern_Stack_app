@@ -40,6 +40,7 @@ function App() {
           </Row>
         </Container>
         <home />
+        
 
         <Switch>
           <Route exact path="/" component={home} />

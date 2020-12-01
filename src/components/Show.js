@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import axios from "axios"
 // import { Link } from 'react-router-dom';
 
 class Show extends Component {
@@ -14,9 +14,9 @@ class Show extends Component {
     axios
       .get("http://localhost:4000/perfume/" + this.props.match.params.id)
       .then((res) => {
-        this.setState({ perfume: res.data });
-        console.log(this.state.perfume);
-      });
+        this.setState({ perfume: res.data })
+        console.log(this.state.perfume)
+      })
   }
 
   // delete(id){
