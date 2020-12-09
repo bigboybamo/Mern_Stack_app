@@ -3,6 +3,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const router = require('./routes/perfume.route')
 require('./database/db')
+const port = process.env.PORT || 4000
 
 const app = express()
 // const http = require('http').Server(app)
@@ -28,7 +29,7 @@ app.get('/', (req, res) => {
 app.use('/', router)
 
 // PORT
-const port = process.env.PORT || 4000;
+
  app.listen(port, () => {
   console.log('Connected to port ' + port)
 })
