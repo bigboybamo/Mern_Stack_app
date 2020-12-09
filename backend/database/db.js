@@ -1,5 +1,10 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://Olabamiji:uOvedZtPIB3CHqVp@cluster0.rngnw.mongodb.net/test?retryWrites=true&w=majority', {
+const dotenv = require('dotenv')
+dotenv.config()
+
+const uri = process.env.MONGO_URI
+
+mongoose.connect(uri, {
     dbName: 'PerfumeDB',
     useNewUrlParser: true,
     useUnifiedTopology: true
