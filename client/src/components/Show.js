@@ -12,7 +12,7 @@ class Show extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:4000/perfume/" + this.props.match.params.id)
+      .get("http://localhost:5000/perfumes/" + this.props.match.params.id)
       .then((res) => {
         this.setState({ perfume: res.data })
         console.log(this.state.perfume)

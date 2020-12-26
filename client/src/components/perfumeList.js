@@ -13,7 +13,7 @@ export default class perfumeList extends Component{
     }
 
     async componentDidMount() {
-        const response = await fetch('http://localhost:4000/perfume')
+        const response = await fetch('http://localhost:5000/perfumes/')
         const json = await response.json();
         this.setState({perfumes : json})
         

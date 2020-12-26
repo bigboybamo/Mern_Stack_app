@@ -64,7 +64,7 @@ export default class createPerfume extends Component {
     };
 
     axios
-      .post("http://localhost:4000/perfume", perfumeObject)
+      .post("http://localhost:5000/perfumes/add", perfumeObject)
       .then((res) => console.log(res.data));
 
     this.setState({

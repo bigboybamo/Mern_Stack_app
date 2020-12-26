@@ -5,7 +5,7 @@ const router = express.Router()
 const Perfume = require('../Models/perfume');
 
 // CREATE Perfume
-router.post('/perfume', (req, res) => {
+router.post('/add', (req, res) => {
   const perfume = new Perfume(req.body)
   perfume.save()
   .then(
@@ -23,7 +23,7 @@ router.post('/perfume', (req, res) => {
 })
 
 //Get every Fragrance in the database
-router.get('/perfume', (req, res, next)=>{
+router.get('/', (req, res, next)=>{
   Perfume.find((error, data) => {
     if(error) {
       return next(error)
@@ -35,7 +35,7 @@ router.get('/perfume', (req, res, next)=>{
 })
 
 //Get a fragrance by id
-router.get('/perfume/:id', (req, res, next)=>{
+router.get('/:id', (req, res, next)=>{
   Perfume.findById(req.params.id, (error, data) => {
     if(error) {
       return next(error)
@@ -48,7 +48,7 @@ router.get('/perfume/:id', (req, res, next)=>{
 
 
 //Update a fragrance using id as a search parameter
-router.put('/update-perfume/:id', (req, res,next) =>{
+router.put('/:id', (req, res,next) =>{
   Perfume.findByIdAndUpdate(req.params.id, {
     $set: req.body
   }, (error, data) => {
@@ -64,7 +64,7 @@ router.put('/update-perfume/:id', (req, res,next) =>{
 
 
 //Delete a particular fragrance using id as a search parameter
-router.delete('/delete-perfume/:id', (req, res, next)=>{
+router.delete('/:id', (req, res, next)=>{
   Perfume.findByIdAndRemove(req.params.id, (error, data) => {
     if(error){
       return next(error)

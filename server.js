@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const router = require('./routes/perfume.route')
 require('./database/db')
 const path = require("path")
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 5000
 
 const app = express()
 // const http = require('http').Server(app)
@@ -23,12 +23,15 @@ app.use(cors())
 //   })
 // })
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-})
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+  });
+}
 
  
-app.use('/', router)
+app.use('/perfumes', router)
 
 // PORT
 
