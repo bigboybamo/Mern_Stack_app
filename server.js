@@ -3,6 +3,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const router = require('./routes/perfume.route')
 require('./database/db')
+const path = require("path")
 const port = process.env.PORT || 4000
 
 const app = express()
@@ -12,6 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }))
+app.use(express.static(path.join(__dirname, "client", "build")))
 
 app.use(cors())
 
@@ -21,9 +23,9 @@ app.use(cors())
 //   })
 // })
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + "/index.html");
- });
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+})
 
  
 app.use('/', router)
